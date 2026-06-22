@@ -16,6 +16,10 @@ export const metadata: Metadata = {
   title: "Hype OS",
   description:
     "The AI Operating System for Autonomous Businesses.",
+
+  icons: {
+    icon: "/favicon.svg",
+    },
 };
 
 export default function RootLayout({

@@ -14,7 +14,7 @@ export default function Home() {
       <nav className="sticky top-0 z-50 border-b border-zinc-100 bg-white/80 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-8 py-5">
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-linear-to-br from-indigo-600 to-violet-600 text-white font-black">
+            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-indigo-600 text-white font-black shadow-lg">
               H
             </div>
 
