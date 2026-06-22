@@ -1,311 +1,213 @@
 export default function Home() {
-  return (
-    <main className="bg-white text-zinc-950">
+  const agents = [
+    "Growth",
+    "Sales",
+    "Support",
+    "Commerce",
+    "Finance",
+    "Compliance",
+  ];
 
-      {/* Navbar */}
+  return (
+    <main>
+      {/* NAVBAR */}
       <nav className="sticky top-0 z-50 border-b border-zinc-100 bg-white/80 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-8 py-5">
-          <div className="text-3xl font-black tracking-tight">
-            Hype
+          <div className="flex items-center gap-3">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-linear-to-br from-indigo-600 to-violet-600 text-white font-black">
+              H
+            </div>
+
+            <span className="text-3xl font-black tracking-tight">Hype</span>
           </div>
 
-          <div className="hidden md:flex gap-8 text-sm text-zinc-600">
-            <a href="#agents" className="hover:text-black">
-              Agents
-            </a>
+          <div className="hidden gap-8 text-sm text-zinc-600 md:flex">
+            <a href="#platform">Platform</a>
 
-            <a href="#pricing" className="hover:text-black">
-              Pricing
-            </a>
+            <a href="#agents">Agents</a>
 
-            <a href="#" className="hover:text-black">
-              Docs
-            </a>
+            <a href="#pricing">Pricing</a>
           </div>
 
-          <button className="rounded-xl border border-zinc-300 px-4 py-2 hover:bg-zinc-50">
+          <button className="rounded-xl border px-4 py-2 hover:bg-zinc-50">
             Book Demo
           </button>
         </div>
       </nav>
 
-      {/* Hero */}
-      <section className="relative overflow-hidden px-6">
+      {/* HERO */}
 
-        {/* Gradient Mesh */}
+      <section className="relative overflow-hidden px-6">
         <div className="absolute inset-0 -z-10">
-          <div className="absolute left-1/4 top-0 h-[600px] w-[600px] rounded-full bg-indigo-200 opacity-40 blur-3xl" />
-          <div className="absolute right-1/4 top-20 h-[500px] w-[500px] rounded-full bg-violet-200 opacity-40 blur-3xl" />
-          <div className="absolute bottom-0 left-1/2 h-[400px] w-[400px] -translate-x-1/2 rounded-full bg-blue-200 opacity-30 blur-3xl" />
+          <div className="absolute left-1/4 top-0 h-175 w-175 rounded-full bg-indigo-200 blur-3xl opacity-40" />
+
+          <div className="absolute right-1/4 top-20 h-125 w-125 rounded-full bg-violet-200 blur-3xl opacity-40" />
         </div>
 
         <div className="mx-auto flex min-h-[95vh] max-w-7xl flex-col items-center justify-center text-center">
-
-          <div className="mb-8 rounded-full border border-zinc-200 bg-white/80 px-4 py-2 text-sm font-medium backdrop-blur">
+          <div className="rounded-full border px-4 py-2 text-sm mb-8">
             Introducing Hype OS
           </div>
 
-          <h1 className="max-w-6xl text-7xl font-bold tracking-tight leading-none md:text-9xl">
-            Run your business
+          <h1 className="max-w-6xl text-7xl font-bold tracking-tight md:text-9xl">
+            The Operating System
             <br />
-            on autopilot.
+            for Autonomous Businesses.
           </h1>
 
           <p className="mt-8 max-w-3xl text-xl text-zinc-600">
-            Hype is the AI Operating System that manages marketing,
-            sales, support, commerce, finance, and compliance
-            from one command center.
+            One platform that manages growth, sales, support, commerce, finance
+            and compliance using AI.
           </p>
 
-          <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <button className="rounded-xl bg-zinc-950 px-6 py-3 font-medium text-white hover:bg-zinc-800">
+          <div className="mt-10 flex gap-4">
+            <button className="rounded-xl bg-zinc-950 px-6 py-3 text-white">
               Start Free
             </button>
 
-            <button className="rounded-xl border border-zinc-300 px-6 py-3 hover:bg-white">
-              Book Demo
-            </button>
+            <button className="rounded-xl border px-6 py-3">Book Demo</button>
           </div>
 
-          {/* Command Center */}
-          <div className="mt-20 w-full max-w-6xl">
-            <div className="rounded-[32px] border border-zinc-200 bg-white p-8 shadow-2xl">
+          {/* COMMAND CENTER */}
 
-              <div className="flex items-center justify-between border-b border-zinc-100 pb-4">
+          <div className="mt-20 w-full max-w-6xl">
+            <div className="rounded-4xl border border-zinc-200 bg-white p-8 shadow-2xl">
+              <div className="flex justify-between border-b pb-4">
                 <div>
-                  <h3 className="text-lg font-semibold">
-                    Hype OS
-                  </h3>
+                  <h3 className="font-semibold">Hype OS</h3>
 
                   <p className="text-sm text-zinc-500">
                     Business Command Center
                   </p>
                 </div>
 
-                <span className="text-sm text-green-600">
-                  ● All Systems Operational
-                </span>
+                <div className="text-green-600">● Operational</div>
               </div>
 
-              <div className="mt-8 grid gap-4 md:grid-cols-3">
+              <div className="mt-8 grid gap-4 md:grid-cols-4">
+                {[
+                  ["Revenue", "$148K"],
+                  ["Growth", "+12%"],
+                  ["Agents", "6"],
+                  ["Tickets", "87"],
+                ].map(([a, b]) => (
+                  <div key={a} className="rounded-2xl border p-6">
+                    <p className="text-sm text-zinc-500">{a}</p>
 
-                <div className="rounded-2xl border border-zinc-200 p-6">
-                  <p className="text-sm text-zinc-500">
-                    Revenue
-                  </p>
-
-                  <h4 className="mt-2 text-4xl font-bold">
-                    $148K
-                  </h4>
-
-                  <p className="mt-2 text-green-600">
-                    +12% this month
-                  </p>
-                </div>
-
-                <div className="rounded-2xl border border-zinc-200 p-6">
-                  <p className="text-sm text-zinc-500">
-                    Active Agents
-                  </p>
-
-                  <h4 className="mt-2 text-4xl font-bold">
-                    6
-                  </h4>
-
-                  <p className="mt-2 text-zinc-500">
-                    All operational
-                  </p>
-                </div>
-
-                <div className="rounded-2xl border border-zinc-200 p-6">
-                  <p className="text-sm text-zinc-500">
-                    Opportunities
-                  </p>
-
-                  <h4 className="mt-2 text-4xl font-bold">
-                    142
-                  </h4>
-
-                  <p className="mt-2 text-indigo-600">
-                    Available today
-                  </p>
-                </div>
-
+                    <h4 className="mt-2 text-4xl font-bold">{b}</h4>
+                  </div>
+                ))}
               </div>
 
-              <div className="mt-8 grid gap-6 md:grid-cols-2">
+              <div className="mt-8 grid gap-4 md:grid-cols-4">
+                {["Marketing", "Sales", "Support", "Finance"].map((x) => (
+                  <div key={x} className="rounded-2xl bg-zinc-50 p-4">
+                    <div className="text-sm text-zinc-500">{x}</div>
 
-                <div className="rounded-2xl border border-zinc-200 p-6">
-                  <h4 className="font-semibold">
-                    Revenue Opportunities
-                  </h4>
-
-                  <ul className="mt-4 space-y-3 text-zinc-600">
-                    <li>🔥 Recover 142 abandoned carts</li>
-                    <li>📈 Increase Product A price by 4%</li>
-                    <li>📦 Restock Product B within 5 days</li>
-                    <li>🎯 Launch retention campaign</li>
-                  </ul>
-                </div>
-
-                <div className="rounded-2xl border border-zinc-200 p-6">
-                  <h4 className="font-semibold">
-                    Agent Activity
-                  </h4>
-
-                  <ul className="mt-4 space-y-3 text-zinc-600">
-                    <li>✅ Marketing launched 3 campaigns</li>
-                    <li>✅ Sales qualified 24 leads</li>
-                    <li>✅ Support resolved 87 tickets</li>
-                    <li>✅ Finance flagged cash-flow anomaly</li>
-                  </ul>
-                </div>
-
+                    <div className="mt-3 font-medium">Active</div>
+                  </div>
+                ))}
               </div>
-
             </div>
           </div>
-
         </div>
       </section>
 
-      {/* One Operating System */}
-      <section className="px-6 py-32">
-        <div className="mx-auto max-w-5xl text-center">
+      {/* BUILT FOR */}
 
-          <p className="text-sm uppercase tracking-[0.3em] text-zinc-500">
+      <section className="border-y py-20">
+        <div className="text-center">
+          <p className="uppercase tracking-[0.3em] text-zinc-500">Built For</p>
+
+          <div className="mt-10 flex flex-wrap justify-center gap-10 text-xl font-semibold">
+            <span>E-commerce</span>
+
+            <span>Agencies</span>
+
+            <span>SaaS</span>
+
+            <span>Consultancies</span>
+
+            <span>Professional Services</span>
+          </div>
+        </div>
+      </section>
+
+      {/* PLATFORM */}
+
+      <section id="platform" className="px-6 py-32">
+        <div className="mx-auto max-w-4xl text-center">
+          <p className="uppercase tracking-[0.3em] text-zinc-500">
             One Operating System
           </p>
 
-          <h2 className="mt-4 text-5xl font-bold tracking-tight md:text-6xl">
+          <h2 className="mt-6 text-6xl font-bold">
             Built for modern businesses.
           </h2>
 
           <p className="mt-8 text-xl text-zinc-600">
-            Connect your store, payments, marketing,
-            support, operations, and finance tools.
-            Hype coordinates everything through a
+            Connect your workflows, tools and business operations through a
             single intelligence layer.
           </p>
-
         </div>
       </section>
 
-      {/* Agents */}
-      <section
-        id="agents"
-        className="mx-auto max-w-7xl px-6 py-24"
-      >
-        <h2 className="mb-4 text-center text-5xl font-bold">
+      {/* AGENTS */}
+
+      <section id="agents" className="mx-auto max-w-7xl px-6 py-24">
+        <h2 className="text-center text-5xl font-bold">
           Six Autonomous Agents
         </h2>
 
-        <p className="mb-16 text-center text-zinc-500">
-          Specialized systems working together inside Hype OS.
-        </p>
-
-        <div className="grid gap-6 md:grid-cols-3">
-
-          {[
-            ["Growth", "Creates and optimizes campaigns automatically."],
-            ["Sales", "Qualifies leads and books meetings."],
-            ["Support", "Resolves customer issues around the clock."],
-            ["Commerce", "Manages inventory and recovers revenue."],
-            ["Finance", "Monitors cash flow and business health."],
-            ["Compliance", "Tracks regulations and audit readiness."],
-          ].map(([title, description]) => (
+        <div className="mt-16 grid gap-6 md:grid-cols-3">
+          {agents.map((agent) => (
             <div
-              key={title}
-              className="rounded-3xl border border-zinc-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+              key={agent}
+              className="rounded-3xl border p-8 hover:shadow-xl transition"
             >
-              <h3 className="text-2xl font-semibold">
-                {title}
-              </h3>
+              <h3 className="text-2xl font-semibold">{agent}</h3>
 
               <p className="mt-3 text-zinc-600">
-                {description}
+                Specialized execution inside Hype OS.
               </p>
             </div>
           ))}
-
         </div>
       </section>
 
-      {/* Business Brain */}
+      {/* BUSINESS BRAIN */}
+
       <section className="bg-zinc-50 px-6 py-32">
         <div className="mx-auto max-w-4xl text-center">
-
-          <h2 className="text-5xl font-bold tracking-tight md:text-6xl">
+          <h2 className="text-6xl font-bold">
             Every decision makes Hype smarter.
           </h2>
 
           <p className="mt-8 text-xl text-zinc-600">
-            Every campaign. Every customer interaction.
-            Every transaction. Every operational workflow.
-            One Business Brain that continuously learns
-            how your company operates.
+            Every interaction compounds into one Business Brain.
           </p>
-
         </div>
       </section>
 
-      {/* Pricing */}
-      <section
-        id="pricing"
-        className="mx-auto max-w-7xl px-6 py-32"
-      >
-        <h2 className="mb-4 text-center text-5xl font-bold">
-          Pricing
-        </h2>
+      {/* PRICING */}
 
-        <p className="mb-16 text-center text-zinc-500">
-          Start small. Expand as your business grows.
-        </p>
+      <section id="pricing" className="mx-auto max-w-7xl px-6 py-32">
+        <h2 className="text-center text-5xl font-bold">Pricing</h2>
 
-        <div className="grid gap-6 md:grid-cols-4">
-
-          {[
-            ["Starter", "$997"],
-            ["Growth", "$4,997"],
-            ["Full OS", "$9,997"],
-            ["Sovereign", "Custom"],
-          ].map(([name, price]) => (
-            <div
-              key={name}
-              className="rounded-3xl border border-zinc-200 p-8 text-center hover:shadow-lg transition-all"
-            >
-              <h3 className="text-2xl font-semibold">
-                {name}
-              </h3>
-
-              <p className="mt-4 text-4xl font-bold">
-                {price}
-              </p>
-
-              <p className="mt-2 text-zinc-500">
-                {price === "Custom" ? "Enterprise" : "per month"}
-              </p>
+        <div className="mt-16 grid gap-6 md:grid-cols-4">
+          {["Starter", "Growth", "Full OS", "Sovereign"].map((x) => (
+            <div key={x} className="rounded-3xl border p-8 text-center">
+              <h3 className="text-2xl font-semibold">{x}</h3>
             </div>
           ))}
-
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-zinc-200 py-12">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-8 md:flex-row">
+      {/* FOOTER */}
 
-          <div className="text-xl font-black">
-            Hype
-          </div>
-
-          <div className="text-sm text-zinc-500">
-            © 2026 Hype. The AI Operating System for Autonomous Businesses.
-          </div>
-
-        </div>
+      <footer className="border-t py-10">
+        <div className="text-center text-zinc-500">© 2026 Hype</div>
       </footer>
-
     </main>
   );
 }
